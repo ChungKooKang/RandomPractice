@@ -42,18 +42,20 @@ int main()
 {
 	std::random_device rd;
 	std::mt19937 gen(rd());
-	std::uniform_int_distribution<> dist(0, 9);
+	//std::uniform_int_distribution<> dist(0, 9);
 
 	std::vector<int> deck{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-	for (int i = 0; i < 10; i++)
-	{
-		int i1 = dist(gen);
-		int i2 = dist(gen);
+	//for (int i = 0; i < 10; i++)
+	//{
+	//	int i1 = dist(gen);
+	//	int i2 = dist(gen);
 
-		std::swap(deck[i1], deck[i2]);
+	//	std::swap(deck[i1], deck[i2]);
 
-	}
+	//}
+
+	std::shuffle(deck.begin(), deck.end(), gen);
 
 	for (auto e : deck)
 	{
